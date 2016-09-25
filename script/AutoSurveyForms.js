@@ -97,9 +97,11 @@
 
                         '</nav>' +
 
-                    '</header>' ,
+                    '</header>' +
         
-         footer : '<footer class="row container-for-footer" >' +
+                    '<div class="row" > <div class="col span-2-of-2 holder-col" > <ul> ' ,
+        
+         footer : ' </ul> </div> </div> <footer class="row container-for-footer" >' +
         
             '<div class="col span-1-of-3">' +
                 '<p></p>' +
@@ -869,7 +871,7 @@
         var heading = g.init.heading;
         var footer = g.init.footer;
         
-        var bodySec = '<h1> Check First </h1>'
+        var bodySec = $("#sor").html();
         
         return heading + '' + bodySec + '' + footer ;
     }
@@ -878,9 +880,9 @@
     {
         var fty = '' , fteen = '' ; 
         
-        if( o === 'on' ) { fty = '50px'; fteen = '15px'; }
+        if( o === 'on' ) { fty = '50px'; fteen = '15px'; $('.drag').css( 'display' , 'none' ); }
         
-        if( o === 'off' ) { fty = '0px'; fteen = '0px'; }
+        if( o === 'off' ) { fty = '0px'; fteen = '0px'; $('.drag').css( 'display' , 'inline-block' ); }
         
          $('#H').css( 'margin-bottom' , fty );
         
@@ -898,6 +900,30 @@
                 }
             
         } );
+        
+        if( o === 'on' )
+            {
+                        var cnto = document.querySelectorAll( 'input[ id^="delete-" ]' );
+
+                        $( cnto ).each( function ( index ) {
+
+                                $( cnto.item( index ) ).css( 'display' , 'none' );
+
+                            } );
+            }
+        
+        if( o === 'off' )
+            {
+                        var cnto = document.querySelectorAll( 'input[ id^="delete-" ]' );
+
+                        $( cnto ).each( function ( index ) {
+
+                                $( cnto.item( index ) ).css( 'display' , 'block' );
+
+                            } );
+            }
+        
+        
         
     }
     
