@@ -267,7 +267,7 @@ ul {
 }
 
 .holder-col {
-    height: 200px;
+    height: auto;
     background-color: antiquewhite;
 }
 
